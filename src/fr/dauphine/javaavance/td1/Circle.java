@@ -6,8 +6,8 @@ public class Circle {
 	
 	public Circle(Point p, int r) {
 		// TODO Auto-generated constructor stub
-		this.center = p;
-		this.radius = r;
+		this.center = new Point(p.getX(), p.getY());//correction
+		this.radius = r;	
 	}
 	
 	public double area() {

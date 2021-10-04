@@ -1,8 +1,10 @@
 package fr.dauphine.javaavance.td1;
 
 public class Point {
-	private int x;
-	private int y;
+	private final int x;//correction -> grace à final, un point ne pourra pas etre changé :
+	//pour translate on ne veut pas modifier le point ms en créer un nouveau qui sera l'image de 
+	//celui passé en paramètre 
+	private final int y;//correction
 	public static int i = 0;
 	
 	public Point(int px, int py) {
@@ -43,9 +45,9 @@ public class Point {
 		return false;
 	}
 	
-	public void translate(int dx, int dy) {
-		this.x = dx;
-		this.y = dy;
+	public Point translate(int dx, int dy) { 
+		Point p = new Point(this.x + dx, this.y + dy);//correction
+		return p;
 	}
 	
 }
